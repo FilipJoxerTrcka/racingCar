@@ -4,16 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.getElementById("startButton");
     const leftButton = document.getElementById("leftButton");
     const rightButton = document.getElementById("rightButton");
-     
+ 
     let carX = canvas.width / 2 - 15;
-    let carY = canvas.height -60;
+    let carY = canvas.height - 60;
     let carWidth = 30;
     let carHeight = 60;
     let velocityX = 0;
-    let obstacle = [];
+    let obstacles = [];
     let gameIsRunning = false;
     let score = 0;
-
+ 
     function startGame() {
         carX = canvas.width / 2 - 15;
         carY = canvas.height - 60;
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         startButton.style.display = "none";
         gameLoop();
     }
-
+ 
     function gameLoop() {
         if (gameIsRunning) {
             updateGame();
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
+ 
     function drawGame() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
  
@@ -105,5 +105,20 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.font = "20px Arial";
         ctx.fillText("Score: " + score, 10, 20);
     }
-    
-});
+ 
+    function gameOver() {
+        gameIsRunning = false;
+        startButton.style.display = "block";
+    }
+ 
+    leftButton.addEventListener("click", () => {
+        velocityX = -5;
+    });
+ 
+    rightButton.addEventListener("click", () => {
+        velocityX = 5;
+    });
+ 
+    startButton.onclick = startGame;
+ });
+ 
