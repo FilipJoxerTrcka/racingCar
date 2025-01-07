@@ -113,14 +113,16 @@ document.addEventListener("DOMContentLoaded", () => {
         startButton.style.display = "block";
     }
  
-   leftButton.addEventListener("click", () => {
-   carX -= 5; // Move the car 5 pixels to the left
-   if (carX < 0) carX = 0; // Ensure the car doesn't move out of bounds
+  leftButton.addEventListener("touchstart", () => {
+   velocityX = -5; // Start moving left
 });
 
-rightButton.addEventListener("click", () => {
-   carX += 5; // Move the car 5 pixels to the right
-   if (carX + carWidth > canvas.width) carX = canvas.width - carWidth; // Ensure the car doesn't move out of bounds
+rightButton.addEventListener("touchstart", () => {
+   velocityX = 5; // Start moving right
+});
+
+document.addEventListener("touchend", () => {
+   velocityX = 0; // Stop moving when the touch ends
 });
     startButton.onclick = startGame;
  });
