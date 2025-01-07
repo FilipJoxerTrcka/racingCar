@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
  
         obstacles.forEach(obstacle => {
-            obstacle.y += 3;
+            obstacle.y += 1;
             if (obstacle.y > canvas.height) {
                 obstacles.shift();
                 score++;
@@ -114,11 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
  
   leftButton.addEventListener("touchstart", () => {
-   velocityX = -5; // Start moving left
+   velocityX = -3; // Start moving left
 });
 
 rightButton.addEventListener("touchstart", () => {
-   velocityX = 5; // Start moving right
+   velocityX = 3; // Start moving right
 });
 
 document.addEventListener("touchend", () => {
