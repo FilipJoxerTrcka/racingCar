@@ -113,14 +113,15 @@ document.addEventListener("DOMContentLoaded", () => {
         startButton.style.display = "block";
     }
  
-    leftButton.addEventListener("click", () => {
-        velocityX = -1;
-    });
- 
-    rightButton.addEventListener("click", () => {
-        velocityX = 1;
-    });
- 
+   leftButton.addEventListener("click", () => {
+   carX -= 5; // Move the car 5 pixels to the left
+   if (carX < 0) carX = 0; // Ensure the car doesn't move out of bounds
+});
+
+rightButton.addEventListener("click", () => {
+   carX += 5; // Move the car 5 pixels to the right
+   if (carX + carWidth > canvas.width) carX = canvas.width - carWidth; // Ensure the car doesn't move out of bounds
+});
     startButton.onclick = startGame;
  });
  
