@@ -114,11 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
  
     leftButton.addEventListener("click", () => {
-        velocityX = -5;
+        velocityX = -1;
     });
  
     rightButton.addEventListener("click", () => {
-        velocityX = 5;
+        velocityX = 1;
     });
  
     startButton.onclick = startGame;
