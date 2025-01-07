@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.getElementById("startButton");
     const leftButton = document.getElementById("leftButton");
     const rightButton = document.getElementById("rightButton");
+    const instructions = document.getElementById("instructions")
  
     let carX = canvas.width / 2 - 15;
     let carY = canvas.height - 60;
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         score = 0;
         gameIsRunning = true;
         startButton.style.display = "none";
+        instructions.style.display= "none";
         gameLoop();
     }
  
